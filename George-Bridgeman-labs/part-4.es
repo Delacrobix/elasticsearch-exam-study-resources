@@ -81,7 +81,7 @@ PUT olympic-noc-regions/_settings
   "number_of_replicas": 0
 }
 
-GET olympic-noc-regions/_stats
+GET _cat/indices/olympic-noc-regions
 
 #
 # Exercise 29
