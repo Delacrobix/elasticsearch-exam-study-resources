@@ -1,0 +1,1 @@
+Here will be the solutions of others exercises that I found on the internet. I will try to give the credits to the authors of the exercises. If you have any exercises that you want to share, please let me know. I will be happy to add them here.
