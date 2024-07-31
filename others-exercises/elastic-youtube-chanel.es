@@ -64,7 +64,7 @@ GET stock-prices/_search
 
  // NOTE: This exercise is easier to resolve using the Kibana UI but you can to use Elasticsearch API to resolve it.
 
- PUT _ilm/policy/datastream-lifecycle-policy
+PUT _ilm/policy/datastream-lifecycle-policy
 {
   "policy": {
     "phases": {
