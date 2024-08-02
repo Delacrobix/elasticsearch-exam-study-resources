@@ -69,7 +69,7 @@ GET /test_match/_search
 }
 
 /**
-  MULTI MATCH
+ * * MULTI MATCH
  */
 GET /test_netflix/_search
 {
@@ -82,7 +82,7 @@ GET /test_netflix/_search
 }
 
 /**
-  BOOL QUERIES
+ * * BOOL QUERIES
  */
 
 // must => all conditions must be met
@@ -252,9 +252,9 @@ GET test_dates/_search
 
 
 /**
-AGGREGATIONS
+ * *AGGREGATIONS
 
-1 Facets
+1 Facets: 
 [ ] Red(20)
 [X] Blue(10)
 [ ] Green(5)
@@ -328,7 +328,7 @@ GET test_netflix/_search
 }
 
 /**
-  HIGHLIGHTING
+ * * HIGHLIGHTING
  */
 GET test_netflix/_search
 {

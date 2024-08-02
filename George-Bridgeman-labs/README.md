@@ -1,1 +1,3 @@
-Here is the solutions of the labs by George Bridgeman. [LINK](https://georgebridgeman.com/exercises/)
+# George Bridgeman labs solutions
+
+Here are my solutions oto the labs by George Bridgeman. [Labs](https://georgebridgeman.com/exercises/)

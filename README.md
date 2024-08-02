@@ -24,3 +24,4 @@ All this information is based on the exam overview for 2024. TODO: PUT THE POINT
 I extracted the information from the following resources:
 
 - [Elasticsearch certified engineer preparation guide](https://raman-kasthuri.medium.com/elastic-search-certified-engineer-preparation-guide-b1f591e4026e)
+- [Preparing for the Elastic Certified Engineer Exam - Get Elasticsearch Certified](https://youtu.be/9UpB-s_ZfNE?si=XhO9DjM2N6FkHtTV)

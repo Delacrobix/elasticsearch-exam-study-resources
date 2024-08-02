@@ -13,7 +13,7 @@ POST _analyze
   "text": "Hola, mi nombre es Gustavo ;)"
 }
 
-// ? --- CHAR FILTERS ---
+// * --- CHAR FILTERS ---
 
 POST /_analyze
 {
@@ -34,7 +34,7 @@ POST /_analyze
   "text": "<p>Hello</p>"
 }
 
-// ? --- TOKENIZERS ---
+// * --- TOKENIZERS ---
 
 // Oriented to analized text: standard, english, spanish, etc
 POST _analyze
@@ -57,7 +57,7 @@ POST /_analyze
   "text": "Hola, mi correo es correodeprueba@gmail.com"
 }
 
-// ? --- TOKEN FILTERS ---
+// * --- TOKEN FILTERS ---
 
 // synonym_graph
 POST /_analyze
