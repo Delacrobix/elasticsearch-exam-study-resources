@@ -88,3 +88,49 @@ GET search_example_index/_search
     }
   }
 }
+
+/**
+*
+* EXERSICE 2
+*
+**/
+
+PUT test_runtime
+{
+  "mappings": {
+    "dynamic": "runtime",
+    "runtime": {
+      "total_value": {
+        "type": "double",
+        "script": {
+          "source": "emit(doc['price'].value * doc['quantity'].value)"
+        }
+      }
+    },
+    "properties": {
+      "price": {
+        "type": "double"
+      },
+      "quantity": {
+        "type": "integer"
+      }
+    }
+  }
+}
+
+POST /test_runtime/_bulk
+{"index":{}}
+{"price":10,"quantity":2}
+{"index":{}}
+{"price":15.5,"quantity":4}
+{"index":{}}
+{"price":7,"quantity":10}
+
+GET test_runtime/_search
+{
+  "fields": [
+    "total_value"
+  ],
+  "_source": false
+}
+

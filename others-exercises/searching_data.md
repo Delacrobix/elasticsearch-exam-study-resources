@@ -52,6 +52,34 @@ Write and execute the following search queries:
 - Search for Phrase 'Advanced Elasticsearch Queries' in the `title` Field.
 - Search for 'visualization' across `tags` and `content` Fields.
 
+# Exercise 2: Write and Execute a Search Using a Runtime Field
+
+## Objective
+
+Learn how to create a runtime field in your index mappings and use it in a search query.
+
+## Instructions
+
+### 1. Define Mappings with a Runtime Field:
+
+- The index name should be `test_runtime`.
+- The mappings should include the `price` field with type `double` and `quantity` field with type `integer`.
+- Define a runtime field `total_value` that calculates the total value by multiplying the `price` and `quantity` fields.
+
+### 2. Index Sample Data:
+
+Now index some sample data into the `test_runtime` index. You can use the following data:
+
+```json
+POST /test_runtime/_bulk
+{ "index": {} }
+{ "price": 10.0, "quantity": 2 }
+{ "index": {} }
+{ "price": 15.5, "quantity": 4 }
+{ "index": {} }
+{ "price": 7.0, "quantity": 10 }
+```
+
 # Solutions
 
 You can find the solution to these exercises in the file [searching_data](./solutions/searching_data.es).
