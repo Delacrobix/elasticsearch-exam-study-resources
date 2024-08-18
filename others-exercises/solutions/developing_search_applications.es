@@ -65,3 +65,91 @@ GET test_pagination/_search
     }
   }
 }
+
+/**
+*
+* EXERSICE 2
+*
+**/
+
+PUT test_products
+{
+  "mappings": {
+    "properties": {
+      "name": {
+        "type": "text"
+      },
+      "description": {
+        "type": "text"
+      },
+      "category": {
+        "type": "keyword"
+      },
+      "price": {
+        "type": "double"
+      }
+    }
+  }
+}
+
+POST /test_products/_bulk
+{ "index": {} }
+{ "name": "Laptop", "description": "A powerful laptop", "category": "electronics", "price": 1200.0 }
+{ "index": {} }
+{ "name": "Smartphone", "description": "A high-end smartphone", "category": "electronics", "price": 800.0 }
+{ "index": {} }
+{ "name": "Jeans", "description": "Comfortable jeans", "category": "clothing", "price": 50.0 }
+{ "index": {} }
+{ "name": "Sneakers", "description": "Stylish sneakers", "category": "clothing", "price": 120.0 }
+{ "index": {} }
+{ "name": "Book", "description": "A thrilling novel", "category": "books", "price": 15.0 }
+{ "index": {} }
+{ "name": "Tablet", "description": "A lightweight tablet", "category": "electronics", "price": 300.0 }
+
+PUT _scripts/product_search_template
+{
+  "script": {
+    "lang": "mustache",
+    "source": {
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "term": {
+                "category": {
+                  "value": "{{category}}"
+                }
+              }
+            },
+            {
+              "range": {
+                "price": {
+                  "gte": "{{min_price}}"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+
+// Validate the search template
+POST _render/template
+{
+  "id": "product_search_template",
+  "params": {
+    "category": "electronics",
+    "min_price": 500
+  }
+}
+
+GET test_products/_search/template
+{
+  "id": "product_search_template",
+  "params": {
+    "category": "electronics",
+    "min_price": 500
+  }
+}
