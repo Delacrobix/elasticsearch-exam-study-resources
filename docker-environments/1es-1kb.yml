@@ -10,6 +10,7 @@ services:
       - cluster.name=lab-cluster
       - discovery.type=single-node
       - xpack.security.enabled=false
+      - path.repo="/mnt/backup"
       - ES_JAVA_OPTS=-Xms2g -Xmx2g # Heap size
     volumes:
       - es-node-labs:/usr/share/elasticsearch/data
