@@ -5,3 +5,7 @@ Here you will find solutions to various exercises that I have found on the inter
 ## Exercises
 
 - [Data Management](data_management.md)
+- [Data Processing](data_processing.md)
+- [Developing Search Applications](developing_search_applications.md)
+- [Cluster Management](cluster_management.md)
+- [Elastic YouTube Channel](elastic_youtube_channel.md)
