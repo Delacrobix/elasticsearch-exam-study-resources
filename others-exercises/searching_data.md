@@ -80,6 +80,45 @@ POST /test_runtime/_bulk
 { "price": 7.0, "quantity": 10 }
 ```
 
+# Exercise 3: Search Across Multiple Clusters
+
+## Objective
+
+Learn how to configure cross-cluster search in Elasticsearch, create an index on a remote cluster, and execute a search query across multiple clusters.
+
+## Instructions
+
+### 1. Set Up the Cross-Cluster Connection:
+
+- Use the docker-compose file provided to set up two Elasticsearch clusters. [2_es-node 2_kibana](../docker-environments/2es-2kb.yml)
+- Connect your local cluster `es-west` to a remote cluster `es-east` by configuring the cluster settings.
+- Confirm that the connection is successful by checking the remote info.
+
+### 2. Create an Index on the Remote Cluster:
+
+- Create an index named `remote_index` on the cluster `es-east` with the following mappings:
+  - `title` field of type `text`.
+  - `description` field of type `text`.
+  - `category` field of type `keyword`.
+
+### 3. Index Sample Data Remotely:
+
+- Index some sample data into the `remote_index` on the `es-east` cluster. You can use the following data:
+
+```json
+POST remote_index/_bulk
+{ "index": {} }
+{ "title": "Remote Product 1", "description": "Description for remote product 1", "category": "electronics" }
+{ "index": {} }
+{ "title": "Remote Product 2", "description": "Description for remote product 2", "category": "clothing" }
+{ "index": {} }
+{ "title": "Remote Product 3", "description": "Description for remote product 3", "category": "books" }
+```
+
+### 4. Execute a Cross-Cluster Search Query:
+
+- Perform a search query from the local cluster `es-west` that retrieves all documents from the `remote_index` on the remote cluster `es-east`.
+
 # Solutions
 
 You can find the solution to these exercises in the file [searching_data](./solutions/searching_data.es).

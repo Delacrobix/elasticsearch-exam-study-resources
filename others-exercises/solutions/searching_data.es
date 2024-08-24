@@ -134,3 +134,58 @@ GET test_runtime/_search
   "_source": false
 }
 
+/**
+*
+* EXERSICE 3
+*
+**/
+
+// Into es-west cluster:
+
+PUT _cluster/settings
+{
+  "persistent": {
+    "cluster": {
+      "remote": {
+        "es-east": {
+          "seeds": [
+            "es-east:9300"
+          ]
+        }
+      }
+    }
+  }
+}
+
+GET _remote/info
+
+// Into es-east cluster:
+
+PUT remote_index
+{
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text"
+      },
+      "description": {
+        "type": "text"
+      },
+      "category": {
+        "type": "keyword"
+      }
+    }
+  }
+}
+
+POST remote_index/_bulk
+{ "index": {} }
+{ "title": "Remote Product 1", "description": "Description for remote product 1", "category": "electronics" }
+{ "index": {} }
+{ "title": "Remote Product 2", "description": "Description for remote product 2", "category": "clothing" }
+{ "index": {} }
+{ "title": "Remote Product 3", "description": "Description for remote product 3", "category": "books" }
+
+// Into es-west cluster:
+
+GET es-east:remote_index/_search
