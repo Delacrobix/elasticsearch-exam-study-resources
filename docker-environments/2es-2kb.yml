@@ -1,0 +1,84 @@
+# 2 clusters each 1 Elasticsearch node, 1 Kibana instance with elasticsearch
+
+services:
+  es-west:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.1.3
+    container_name: es-west
+    environment:
+      - node.name=es-west
+      - cluster.name=es-cluster-west
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - network.host=0.0.0.0
+      - network.publish_host=es-west
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - es-west_data:/usr/share/elasticsearch/data
+    ports:
+      - 9201:9200
+      - 9301:9300
+    networks:
+      - es-network
+
+  kibana-west:
+    image: docker.elastic.co/kibana/kibana:8.1.3
+    container_name: kibana-west
+    environment:
+      - SERVER_NAME=kibana-west
+      - ELASTICSEARCH_HOSTS=http://es-west:9200
+    ports:
+      - 5603:5601
+    networks:
+      - es-network
+    depends_on:
+      - es-west
+
+  es-east:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.1.3
+    container_name: es-east
+    environment:
+      - node.name=es-east
+      - cluster.name=es-cluster-east
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - network.host=0.0.0.0
+      - network.publish_host=es-east
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - es-east_data:/usr/share/elasticsearch/data
+    ports:
+      - 9202:9200
+      - 9302:9300
+    networks:
+      - es-network
+
+  kibana-east:
+    image: docker.elastic.co/kibana/kibana:8.1.3
+    container_name: kibana-east
+    environment:
+      - SERVER_NAME=kibana-east
+      - ELASTICSEARCH_HOSTS=http://es-east:9200
+    ports:
+      - 5602:5601
+    networks:
+      - es-network
+    depends_on:
+      - es-east
+
+volumes:
+  es-west_data:
+  es-east_data:
+
+networks:
+  es-network:
+    driver: bridge
