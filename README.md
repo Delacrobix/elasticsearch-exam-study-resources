@@ -15,6 +15,10 @@ In each folder, you can find descriptions of the resources that I used to study 
 - [docker-environments](docker-environments/README.md)
 - [other-exercises](other-exercises/README.md)
 
+### Others relevant resources:
+
+- [Elasticsearch engineering exam notes by Simone Guardati ](https://www.pistocop.dev/posts/es_engineer_exam_notes): This is a helpful resource for study for the exam. In this blog post, Simone Guardati shares his notes and short explanation abut technical terms and concepts that are important for the exam. He also gives a simple explanation of API and how to use them.
+
 ## Currently exam topics
 
 The following information covers the current topics for the 2024 exam.
