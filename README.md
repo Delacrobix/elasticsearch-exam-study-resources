@@ -17,7 +17,15 @@ In each folder, you can find descriptions of the resources that I used to study 
 
 ### Others relevant resources:
 
+- ["Elasticsearch Para Todos"](https://www.udemy.com/share/108Xxg3@KSyfcpPQBlnmfWBVN7kZGeGN5g_CE7XDQIlevo2gJDuM3qQnKBvrgARJ7inwMOW5rw==/): This is a course in Spanish by Gustavo Llermaly. It's highly recommended for starters in Elasticsearch. The course covers the basics of Elasticsearch and little advances topics. Also includes bonus content like how to use Kibana and Logstash.
 - [Elasticsearch engineering exam notes by Simone Guardati ](https://www.pistocop.dev/posts/es_engineer_exam_notes): This is a helpful resource for study for the exam. In this blog post, Simone Guardati shares his notes and short explanation abut technical terms and concepts that are important for the exam. He also gives a simple explanation of API and how to use them.
+
+### Exam experiences
+
+This is a list of experiences from people who have taken the exam:
+
+- [By Surbhi Mahajan](https://www.linkedin.com/pulse/elastic-certified-engineer-exam-my-experience-how-i-surbhi-mahajan/)
+- [By Guido Lena Cota](https://kreuzwerker.de/en/post/elastic-certified-engineer-exam)
 
 ## Currently exam topics
 
