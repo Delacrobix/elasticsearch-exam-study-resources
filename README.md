@@ -10,15 +10,15 @@ I used the VSCode extension [Elasticsearch for VSCode](https://marketplace.visua
 
 In each folder, you can find descriptions of the resources that I used to study for the exam.
 
-- [Gustavo-Llermaly-udemy-course-exercises](Gustavo-Llermaly-udemy-course-exercises/README.md)
 - [George-Bridgeman-labs](George-Bridgeman-labs/README.md)
+- [Guido-Lena-Cota-exercises](Guido-Lena-Cota-exercises/README.md)
 - [docker-environments](docker-environments/README.md)
 - [other-exercises](other-exercises/README.md)
 
 ### Others relevant resources:
 
-- ["Elasticsearch Para Todos"](https://www.udemy.com/share/108Xxg3@KSyfcpPQBlnmfWBVN7kZGeGN5g_CE7XDQIlevo2gJDuM3qQnKBvrgARJ7inwMOW5rw==/): This is a course in Spanish by Gustavo Llermaly. It's highly recommended for starters in Elasticsearch. The course covers the basics of Elasticsearch and little advances topics. Also includes bonus content like how to use Kibana and Logstash.
-- [Elasticsearch engineering exam notes by Simone Guardati ](https://www.pistocop.dev/posts/es_engineer_exam_notes): This is a helpful resource for study for the exam. In this blog post, Simone Guardati shares his notes and short explanation abut technical terms and concepts that are important for the exam. He also gives a simple explanation of API and how to use them.
+- [Elasticsearch Para Todos:](https://www.udemy.com/share/108Xxg3@KSyfcpPQBlnmfWBVN7kZGeGN5g_CE7XDQIlevo2gJDuM3qQnKBvrgARJ7inwMOW5rw==/) This is a course in Spanish by Gustavo Llermaly. It's highly recommended for starters in Elasticsearch. The course covers the basics of Elasticsearch and little advances topics. Also includes bonus content like how to use Kibana and Logstash.
+- [Elasticsearch engineering exam notes by Simone Guardati:](https://www.pistocop.dev/posts/es_engineer_exam_notes) This is a helpful resource for study for the exam. In this blog post, Simone Guardati shares his notes and short explanation abut technical terms and concepts that are important for the exam. He also gives a simple explanation of API and how to use them.
 
 ### Exam experiences
 
