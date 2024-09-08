@@ -1,6 +1,6 @@
-# Exercises for the Elastic Certified Engineer Exam: Search and Aggregations by Guido Lena Cota
+# Exercises for the Elastic Certified Engineer Exam: Model Data into Elasticsearch by Guido Lena Cota
 
-This exercises was extracted from the blog post by Guido Lena Cota, [Elastic Certified Engineer Exam: Search and Aggregations.](https://kreuzwerker.de/en/post/exercises-for-the-elastic-certified-engineer-exam-search-and-aggregations)
+This exercises was extracted from the blog post by Guido Lena Cota, [Elastic Certified Engineer Exam: Model Data into Elasticsearch.](https://kreuzwerker.de/en/post/exercises-for-the-elastic-certified-engineer-exam-model-data-into)
 
 ## Exercise 1
 
@@ -189,4 +189,4 @@ PUT hamlet_1/_doc/_bulk
 ## Solutions
 
 
-You can find the solution to these exercises in the file [search-and-aggregations-solutions.](./solutions/search-and-aggregations.es)
+You can find the solution to these exercises in the file [model-data-into-elasticsearch.es](./solutions/model-data-into-elasticsearch.es)
