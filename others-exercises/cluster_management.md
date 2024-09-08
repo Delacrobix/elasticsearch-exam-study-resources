@@ -34,6 +34,29 @@ For this step you must to have the `path.repo` setting configured in the `elasti
 
 - Confirm that the `important_data` index has been successfully restored by checking its existence and health status.
 
-# Solutions
+# Exercise 2: Configure a Cluster for Cross-Cluster Search
 
-You can find the solution to these exercises in the file [cluster_management](./solutions/cluster_management.es).
+## Objective
+
+Learn how to configure Elasticsearch clusters for cross-cluster search by setting up the necessary connections between a local and a remote cluster.
+
+## Instructions
+
+### 1. Set Up Two Elasticsearch Clusters:
+
+- Use the provided docker-compose file to set up two Elasticsearch clusters: [2_es-node 2_kibana](../docker-environments/2es-2kb.yml)
+- Ensure you have two running Elasticsearch clusters:
+  - **Local cluster:** `es-west` (listening on `localhost:9201`)
+  - **Remote cluster:** `es-east` (listening on `localhost:9202`)
+
+### 2. Verify Cluster Health:
+
+- Check the health status of both clusters to ensure they are running correctly.
+
+### 3. Configure the Local Cluster to Connect to the Remote Cluster:
+
+- From the local cluster `es-west`, configure a connection to the remote cluster `es-east`.
+
+### 4. Verify the Remote Cluster Connection:
+
+Verify that the local cluster `es-west` is correctly connected to the remote cluster `es-east`.

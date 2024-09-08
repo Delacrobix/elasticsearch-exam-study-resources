@@ -42,3 +42,33 @@ PUT important_data/_settings
 {
   "number_of_replicas": 0
 }
+
+
+/**
+*
+* EXERSICE 2
+*
+**/
+
+// In both clusters: 
+
+GET _cluster/health
+
+// Into es-east cluster
+
+PUT _cluster/settings
+{
+  "persistent": {
+    "cluster": {
+      "remote": {
+        "es-east": {
+          "seeds": [
+            "es-east:9300"
+          ]
+        }
+      }
+    }
+  }
+}
+
+GET _remote/info
