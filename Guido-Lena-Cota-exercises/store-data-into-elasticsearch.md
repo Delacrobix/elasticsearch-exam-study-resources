@@ -190,3 +190,9 @@ PUT hamlet-2/_bulk
 ```
 
 14. Update all documents in `hamlet-new` by using the `split_act_scene_line` pipeline
+
+
+## Solutions
+
+
+You can find the solution to these exercises in the file [store-data-into-elasticsearch.](./solutions/store-data-into-elasticsearch.es)
