@@ -96,7 +96,9 @@ GET hamlet_2/_search
  * * Exercise 2
  */
 
- // Deleting data from the first exercise
+//NOTE: The final result of the following exercise does not match the expected output. The expected output is incorrect. If you can't find the solution, please let me know.
+
+// Deleting data from the first exercise
 
 DELETE hamlet_*
 
@@ -313,6 +315,127 @@ GET hamlet_3/_search
           "name.keyword": "HAMLET"
         }
       }
+    }
+  }
+}
+
+/**
+ * * Exercise 3
+ */
+
+// Deleting data from the others exercises
+
+DELETE hamlet_*
+
+// 1
+
+PUT hamlet_1
+{
+  "settings": {
+    "number_of_replicas": 0,
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "properties": {
+      "speaker": {
+        "type": "keyword"
+      },
+      "line_number": {
+        "type": "text"
+      },
+      "text_entry": {
+        "type": "text",
+        "analyzer": "english"
+      }
+    }
+  }
+}
+
+// 2
+
+PUT hamlet_1/_bulk
+{"index":{"_index":"hamlet_1","_id":0}}
+{"line_number":"1.1.1","speaker":"BERNARDO","text_entry":"Whos there?"}
+{"index":{"_index":"hamlet_1","_id":1}}
+{"line_number":"1.1.2","speaker":"FRANCISCO","text_entry":"Nay, answer me: stand, and unfold yourself."}
+{"index":{"_index":"hamlet_1","_id":2}}
+{"line_number":"1.1.3","speaker":"BERNARDO","text_entry":"Long live the king!"}
+{"index":{"_index":"hamlet_1","_id":3}}
+{"line_number":"1.2.1","speaker":"KING CLAUDIUS","text_entry":"Though yet of Hamlet our dear brothers death"}
+
+// 3
+
+PUT hamlet_2
+{
+  "settings": {
+    "number_of_replicas": 0,
+    "number_of_shards": 1,
+    "analysis": {
+      "char_filter": {
+        "hamlet_to_censored": {
+          "type": "mapping",
+          "mappings": [
+            "Hamlet=>censored"
+          ]
+        }
+      },
+      "tokenizer": {
+        "whitespace_tokenizer": {
+          "type": "whitespace"
+        }
+      },
+      "filter": {
+        "min_length_filter": {
+          "type": "length",
+          "min": 5
+        }
+      },
+      "analyzer": {
+        "shy_hamlet_analyzer": {
+          "type": "custom",
+          "char_filter": [
+            "hamlet_to_censored"
+          ],
+          "tokenizer": "whitespace_tokenizer",
+          "filter": [
+            "min_length_filter"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "text_entry": {
+        "type": "text",
+        "analyzer": "shy_hamlet_analyzer"
+      }
+    }
+  }
+}
+
+// 4 
+
+POST _reindex
+{
+  "source": {
+    "index": "hamlet_1",
+    "_source": [
+      "text_entry"
+    ]
+  },
+  "dest": {
+    "index": "hamlet_2"
+  }
+}
+
+// 5 
+
+GET hamlet_2/_search
+{
+  "query": {
+    "match": {
+      "text_entry": "censored"
     }
   }
 }

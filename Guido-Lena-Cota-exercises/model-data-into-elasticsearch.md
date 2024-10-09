@@ -160,12 +160,14 @@ Add built-in text analyzers and specify a custom one.
 
 ### Instructions
 
-1. Create the index `hamlet_1` with one primary shard and no replicas.
-2. Define a mapping for the default type "_doc" of `hamlet_1`, so that (i) the type has three fields, named `speaker`, `line_number`, and `text_entry`, (ii) `text_entry` is associated with the language "english" analyzer.
-3. Add some documents to `hamlet_1` by running the following _bulk command:
+1. Create the index `hamlet_1` with:
+    1. one primary shard and no replicas.
+    2. the type has three fields, named `speaker`, `line_number`, and `text_entry` 
+    3. `text_entry` is associated with the language "english" analyzer.
+2. Add some documents to `hamlet_1` by running the following _bulk command:
 
 ```json
-PUT hamlet_1/_doc/_bulk
+PUT hamlet_1/_bulk
 {"index":{"_index":"hamlet_1","_id":0}}
 {"line_number":"1.1.1","speaker":"BERNARDO","text_entry":"Whos there?"}
 {"index":{"_index":"hamlet_1","_id":1}}
@@ -175,16 +177,17 @@ PUT hamlet_1/_doc/_bulk
 {"index":{"_index":"hamlet_1","_id":3}}
 {"line_number":"1.2.1","speaker":"KING CLAUDIUS","text_entry":"Though yet of Hamlet our dear brothers death"}
 ```
-4. Create the index `hamlet_2` with one primary shard and no replicas.
-5. Add to `hamlet_2` a custom analyzer named `shy_hamlet_analyzer`, consisting of: 
-   1. a char filter to replace the characters "Hamlet" with "[CENSORED]"
-   2. a tokenizer to split tokens on whitespaces and columns
-   3. a token filter to ignore any token with less than 5 characters
-6. Define a mapping for the default type "_doc" of `hamlet_2`, so that
-   1. the type has one field named `text_entry`
-   2. `text_entry` is associated with the `shy_hamlet_analyzer` created in the previous step.
-7. Reindex the `text_entry` field of `hamlet_1` into `hamlet_2`
-8. Verify that documents have been reindexed to `hamlet_2` as expected - e.g., by searching for "censored" into the `text_entry` field.
+3. Create the index `hamlet_2` with:
+    1. one primary shard and no replicas.
+    2. Add to `hamlet_2` a custom analyzer named `shy_hamlet_analyzer`, consisting of: 
+        1. a char filter to replace the characters "Hamlet" with "[CENSORED]"
+        2. a tokenizer to split tokens on whitespaces and columns
+        3. a token filter to ignore any token with less than 5 characters
+    3. Define a mapping for `hamlet_2`, so that:
+        1. the type has one field named `text_entry`
+        2. `text_entry` is associated with the `shy_hamlet_analyzer` created in the previous step.
+4. Reindex the `text_entry` field of `hamlet_1` into `hamlet_2`
+5. Verify that documents have been reindexed to `hamlet_2` as expected - e.g., by searching for "censored" into the `text_entry` field.
 
 ## Solutions
 
