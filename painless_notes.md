@@ -45,7 +45,7 @@ doc['field_name'].value
         "match_all": {}
       },
       "script": {
-        "source": "doc['field_name'].value * 2"
+        "source": "doc['field_name'].value == 2"
       }
     }
   }
