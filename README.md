@@ -13,7 +13,7 @@ In each folder, you can find descriptions of the resources that I used to study 
 - [George-Bridgeman-labs](George-Bridgeman-labs/README.md)
 - [Guido-Lena-Cota-exercises](Guido-Lena-Cota-exercises/README.md)
 - [docker-environments](docker-environments/README.md)
-- [other-exercises](other-exercises/README.md)
+- [other-exercises](others-exercises/README.md)
 
 ### Others relevant resources:
 
