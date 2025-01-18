@@ -1,6 +1,6 @@
 # Exercises for the Elastic Certified Engineer Exam: Store Data into Elasticsearch by Guido Lena Cota
 
-This exercises was extracted from the blog post by Guido Lena Cota, [Exercises for the Elastic Certified Engineer Exam: Store Data into Elasticsearch.](https://kreuzwerker.de/en/post/exercises-for-the-elastic-certified-engineer-exam-store-data-into)
+This exercises was extracted from the blog post by Guido Lena Cota, [Exercises for the Elastic Certified Engineer Exam: Store Data into Elasticsearch.](https://medium.com/pcg-dach/exercises-for-the-elastic-certified-engineer-exam-store-data-into-elasticsearch-cbce230bcc6)
 
 ## Exercise 1
 

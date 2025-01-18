@@ -12,8 +12,8 @@ In each folder, you can find descriptions of the resources that I used to study 
 
 - [George-Bridgeman-labs](George-Bridgeman-labs/README.md)
 - [Guido-Lena-Cota-exercises](Guido-Lena-Cota-exercises/README.md)
-- [docker-environments](docker-environments/README.md)
 - [other-exercises](others-exercises/README.md)
+- [docker-environments](docker-environments/README.md)
 
 ### Others relevant resources:
 
@@ -25,7 +25,7 @@ In each folder, you can find descriptions of the resources that I used to study 
 This is a list of experiences from people who have taken the exam:
 
 - [By Surbhi Mahajan](https://www.linkedin.com/pulse/elastic-certified-engineer-exam-my-experience-how-i-surbhi-mahajan/)
-- [By Guido Lena Cota](https://kreuzwerker.de/en/post/elastic-certified-engineer-exam)
+- [By Guido Lena Cota](https://medium.com/pcg-dach/elastic-certified-engineer-exam-what-to-expect-and-how-to-rock-it-cf409ed48d7b)
 
 ## Currently exam topics
 

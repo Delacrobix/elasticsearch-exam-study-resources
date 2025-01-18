@@ -1,6 +1,6 @@
 # Exercises for the Elastic Certified Engineer Exam: Model Data into Elasticsearch by Guido Lena Cota
 
-This exercises was extracted from the blog post by Guido Lena Cota, [Elastic Certified Engineer Exam: Model Data into Elasticsearch.](https://kreuzwerker.de/en/post/exercises-for-the-elastic-certified-engineer-exam-model-data-into)
+This exercises was extracted from the blog post by Guido Lena Cota, [Elastic Certified Engineer Exam: Model Data into Elasticsearch.](https://medium.com/pcg-dach/exercises-for-the-elastic-certified-engineer-exam-model-data-into-elasticsearch-5eb69086cdaa)
 
 ## Exercise 1
 
